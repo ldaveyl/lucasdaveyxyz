@@ -10,19 +10,12 @@
 <aside id="meta">
     <div>
     <section>
-      <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
+      <h4 id="date"> {{ .Date.Format "Jan 2, 2006" }} </h4>
     </section>
-    {{ with .Params.topics }}
-    <ul id="topics">
-      {{ range . }}
-        <li><a href="{{ "topics" | absURL}}{{ . | urlize }}">{{ . }}</a> </li>
-      {{ end }}
-    </ul>
-    {{ end }}
     {{ with .Params.tags }}
     <ul id="tags">
       {{ range . }}
-        <li> <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a> </li>
+        <a href="{{ "tags" | absURL }}{{ . | urlize }}">{{ . }}</a>
       {{ end }}
     </ul>
     {{ end }}

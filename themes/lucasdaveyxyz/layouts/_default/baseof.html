@@ -1,11 +1,26 @@
 <!DOCTYPE html>
 <html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="all" />
+    <!--mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
+    <header>  
+      <nav class="navbar" role="navigation">  
+        <div class="navbar__left">  
+          <a href="/"><strong>{{ .Params.title }}</strong></a>  
+        </div>  
+        <div class="navbar__right">     
+          {{ range sort .Pages "File.Path"}}
+            <a class="previous" href="{{.Permalink}}"> {{ .Title }}</a>
+          {{ end }}
+        </div>  
+      </nav>  
+    </header>  
+    {{ block "main" . }}
+      <!-- The part of the page that begins to differ between templates -->
+    {{ end }}
+    {{ block "footer" . }}
+    <!-- More shared code, perhaps a footer but that can be overridden if need be in  -->
+    {{ end }}
+  </body>
 </html>
