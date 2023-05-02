@@ -11,24 +11,24 @@
 
 
 
-      <!-- Loop over pages in content/post -->
+      <!-- Loop over pages in content/post and add cards-->
       {{ $posts := where .Site.RegularPages "Section" "post" }}
 
-
-
+      <div class="container">
       {{ range $i, $v := $posts }}
+        
+        {{ if eq 0 (mod $i $.Params.ncols) }}  
+          <div class="row gy-5">
+        {{ end }}
 
-        <div class="container">
-          <div class="row">
+             <div class="col"> {{ .Params.Title }} </div>
 
-            {{ if eq 0 (mod $i 3) }} <div class="col-sm-3"> {{ $i }} </div> {{ end }}
-            {{ if eq 1 (mod $i 3) }} <div class="col-sm-3"> {{ $i }} </div> {{ end }}
-            {{ if eq 2 (mod $i 3) }} <div class="col-sm-3"> {{ $i }} </div> {{ end }}
-           
+        {{ if eq (sub $.Params.ncols 1) (mod $i $.Params.ncols) }}
           </div>
-        </div>
+        {{ end}}
 
       {{ end }}
+    </div>
 
   </main>
 {{ end }}
