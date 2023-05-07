@@ -1,6 +1,6 @@
 ---
 title: "Post 3"
-date: "May 2, 2023"
 draft: false
-tags:
+date: "2023-05-07T17:06:19+02:00"
+thumbnail: 2023-05-07_14-43-31.png
 ---

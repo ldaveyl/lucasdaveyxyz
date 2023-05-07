@@ -1,33 +1,28 @@
 {{ define "main" }}
 <main aria-role="main">
 
-    <header class="homepage-header">
-      <h1> {{ .Title }} </h1>
-      <span class="subtitle"> {{ .Params.subtitles }} </span>
-    </header>
-
     <div class="homepage-content"> {{ .Content }} </div>
+  
+    {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
+
+    <div class="container">
 
 
+      <div class="row g-5">
 
+      <h1> {{ .Title }} </h1>
 
-      <!-- Loop over pages in content/post and add cards-->
-      {{ $posts := where .Site.RegularPages "Section" "post" }}
-
-      <div class="container">
-      {{ range $i, $v := $posts }}
         
-        {{ if eq 0 (mod $i $.Params.ncols) }}  
-          <div class="row gy-5">
-        {{ end }}
-
-             <div class="col"> {{ .Params.Title }} </div>
-
-        {{ if eq (sub $.Params.ncols 1) (mod $i $.Params.ncols) }}
-          </div>
-        {{ end}}
-
+      {{ range $i, $v := $p }}
+        <div class="col-lg-4 col-sm-6"> 
+          {{ .Params.Title }}
+          {{ $image := .Resources.GetMatch .Params.thumbnail }}
+          <a href="{{ $image.RelPermalink | path.Dir }}">
+            <img src="{{ $image.RelPermalink }}" class="img-fluid" width="{{ $image.Width }}" height="{{ $image.Height }}">
+          </a>
+        </div>
       {{ end }}
+      
     </div>
 
   </main>
