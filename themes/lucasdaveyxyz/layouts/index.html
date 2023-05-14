@@ -1,30 +1,20 @@
 {{ define "main" }}
-<main aria-role="main">
-
-    <div class="homepage-content"> {{ .Content }} </div>
-  
-    {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
-
+  <main aria-role="main">
     <div class="container">
-
-
-      <div class="row g-5">
-
-      <h1> {{ .Title }} </h1>
-
-        
-      {{ range $i, $v := $p }}
-        <div class="col-lg-4 col-sm-6"> 
-          {{ .Params.Title }}
-          {{ $image := .Resources.GetMatch .Params.thumbnail }}
-          <a href="{{ $image.RelPermalink | path.Dir }}">
-            <img src="{{ $image.RelPermalink }}" class="img-fluid" width="{{ $image.Width }}" height="{{ $image.Height }}">
-          </a>
+      <div class="row">
+      {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
+      {{ range $p }}
+        <div class="col-sm-6 col-lg-4"> 
+          {{ $img := .Resources.GetMatch .Params.thumbnail }}
+          <figure>
+              <a href="{{ $img.RelPermalink | path.Dir }}">
+                  <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
+              </a>
+          </figure>
         </div>
       {{ end }}
-      
+      </div>
     </div>
-
   </main>
 {{ end }}
 
