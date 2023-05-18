@@ -1,32 +1,26 @@
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand">
         <img src="/assets/key-1k.png" class="figure-img img-fluid" width="96" height="54">
         lucasdavey.xyz
       </a>
       <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="{{ site.BaseURL }}"> Work </a>
+            <a class="nav-link {{ if .IsHome }} active aria-current='page' {{ end }}" href="{{ site.BaseURL }}"> Work </a>
           </li>
-          {{ $currentPage := . }}
+          
           {{ $p := where site.RegularPages "Section" "!=" "post" }}
           {{ range sort $p "File.Path"}}
 
-
           <li class="nav-item">
-            <a class="nav-link" href="{{ .RelPermalink }}"> {{ .Title }} </a>
+            <a class="nav-link {{ if eq .RelPermalink $.RelPermalink }} active aria-current='page' {{ end }}" href="{{ .RelPermalink }}"> {{ .Title }} </a>
           </li>
           {{ end }}
 
-
         </ul>
-        <span class="navbar-text">
-          Navbar text with an inline element {{ .Page.Permalink }} {{ site.BaseURL }}
-        </span>
       </div>
     </div>
   </nav>

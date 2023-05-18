@@ -4,11 +4,11 @@
       <div class="row">
       {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
       {{ range $p }}
-        <div class="col-sm-6 col-lg-4"> 
+        <div class="col-sm-6 col-lg-4 bg-light"> 
           {{ $img := .Resources.GetMatch .Params.thumbnail }}
           <figure>
               <a href="{{ $img.RelPermalink | path.Dir }}">
-                  <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
+                  <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid mx-auto" width="{{ $img.Width }}" height="{{ $img.Height }}">
               </a>
           </figure>
         </div>
