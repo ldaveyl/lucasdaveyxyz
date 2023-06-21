@@ -1,43 +1,21 @@
 {{ define "main" }}
-<main aria-role="main">
-  <div class="container">
-
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
-      {{ $c := where $p "Params.carousel" true }}
-      <div class="carousel-inner">
-        {{ range $c }}
-        <div class="carousel-item">
-          {{ $img := .Resources.GetMatch .Params.thumbnail }}
-          <img src="{{ $img.RelPermalink }}" class="d-block w-100">
-        </div>
+<main aria-role="main"> 
+    <div class="container">
+        {{ $p := (where .Site.RegularPages "Section" "post").ByDate }}
+        <div class="row">
+        {{ range $p }}
+            <div class="col-sm-6 col-lg-4"> 
+            {{ $img := .Resources.GetMatch .Params.thumbnail }}
+                <figure class="figure">
+                        <a href="{{ $img.RelPermalink | path.Dir }}">
+                            <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
+                        </a>
+                        <div class="bottom-left">{{ .Params.caption }}</div>
+                    <!-- <figcaption class="figure-caption text-center"><i>{{ time.Format "2006/01/02" .Params.date }}</i> - {{ .Params.caption }}</figcaption> -->
+                </figure>
+            </div>
         {{ end }}
-      </div>
-
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        </div>
     </div>
-
-    <div class="row">
-    {{ range $p }}
-      <div class="col-sm-6 col-lg-4"> 
-        {{ $img := .Resources.GetMatch .Params.thumbnail }}
-        <figure class="figure">
-          <a href="{{ $img.RelPermalink | path.Dir }}">
-            <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
-          </a>
-          <!-- <figcaption class="figure-caption text-center"><i>{{ time.Format "2006/01/02" .Params.date }}</i> - {{ .Params.caption }}</figcaption> -->
-        </figure>
-      </div>
-    {{ end }}
-    </div>
-  </div>
 </main>
 {{ end }}
