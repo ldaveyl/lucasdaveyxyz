@@ -9,9 +9,12 @@
                 <figure class="figure">
                         <a href="{{ $img.RelPermalink | path.Dir }}">
                             <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
+                        <div class="overlay">
+                            <div class="bottom-left">
+                                {{ .Params.caption }}
+                            </div>
+                        </div>
                         </a>
-                        <div class="bottom-left">{{ .Params.caption }}</div>
-                    <!-- <figcaption class="figure-caption text-center"><i>{{ time.Format "2006/01/02" .Params.date }}</i> - {{ .Params.caption }}</figcaption> -->
                 </figure>
             </div>
         {{ end }}
