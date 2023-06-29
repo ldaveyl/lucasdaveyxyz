@@ -1,18 +1,18 @@
 <div class="container">
     <nav class="navbar navbar-expand-sm navbar-light">
-        <span class="class navbar-brand mb-0" id="myheader"><b>Lucas Davey</b></span>
+        <span class="class navbar-brand mb-0" id="myheader">Lucas Davey</span>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ if .IsHome }} active aria-current='page' {{ end }}" href="{{ site.BaseURL }}"> Portfolio </a>
+                    <a class="nav-link active" href="{{ site.BaseURL }}"> Posts </a>
                 </li>
-                {{ $p := where site.RegularPages "Section" "!=" "post" }}
+                {{ $p := where site.RegularPages "Section" "!=" "posts" }}
                 {{ range sort $p "File.Path"}}
                 <li class="nav-item">
-                    <a class="nav-link {{ if eq .RelPermalink $.RelPermalink }} active aria-current='page' {{ end }}" href="{{ .RelPermalink }}"> {{ .Title }} </a>
+                    <a class="nav-link active" href="{{ .RelPermalink }}"> {{ .Title }} </a>
                 </li>
                 {{ end }}
             </ul>
