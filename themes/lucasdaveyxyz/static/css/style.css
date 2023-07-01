@@ -43,8 +43,18 @@ img {
 
 .pagewrap {
     max-width: 1200px;
+    width: 95%;
 }
 
+.smooth-resize {
+    transition: all 0.3s ease;
+}
+
+.navbar-collapse {
+    position: relative;
+    display: block;
+    text-align: left;
+}
 
   
 

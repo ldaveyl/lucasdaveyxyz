@@ -1,24 +1,22 @@
 {{ define "main" }}
 <main aria-role="main"> 
-    <div class="container">
-        {{ $p := (where .Site.RegularPages "Section" "posts").ByDate }}
-        <div class="row">
-        {{ range $p }}
-            <div class="col-sm-6 col-lg-4"> 
-            {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "500x" }}
-                <figure class="figure">
-                    <a href="{{ $img.RelPermalink | path.Dir }}">
-                        <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
-                        <div class="overlay">
-                            <div class="bottom-left">
-                                {{ .Params.title }}
-                            </div>
+    {{ $p := (where .Site.RegularPages "Section" "posts").ByDate }}
+    <div class="row">
+    {{ range $p }}
+        <div class="col-sm-6 col-lg-4 smooth-resize"> 
+        {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
+            <figure class="figure">
+                <a href="{{ $img.RelPermalink | path.Dir }}">
+                    <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
+                    <div class="overlay">
+                        <div class="bottom-left">
+                            {{ .Params.title }}
                         </div>
-                    </a>
-                </figure>
-            </div>
-        {{ end }}
+                    </div>
+                </a>
+            </figure>
         </div>
+    {{ end }}
     </div>
 </main>
 {{ end }}
