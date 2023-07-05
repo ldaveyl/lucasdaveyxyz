@@ -1,6 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-draft: false
+subtitle: ""
+draft: true
 date: "{{ .Date }}"
 thumbnail: ""
 ---
+
+# {{< param title >}}
