@@ -1,11 +1,13 @@
 {{ define "main" }}
+<main aria-role="main"> 
     {{ .Content }}
-    <div>
-        {{ with .PrevInSection }}
-        <a class="previous" href="{{.Permalink}}"> {{.Title}} </a>
-        {{ end }}
-        {{ with .NextInSection }}
-        <a class="next" href="{{.Permalink}}"> {{.Title}} </a>
-        {{ end }}
-    </div>
+    <br>
+    <br>
+    {{ with .PrevInSection }}
+    <a class="previous" href="{{.Permalink}}"> {{.Title}} </a>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a class="next" href="{{.Permalink}}"> {{.Title}} </a>
+    {{ end }}
+</main>
 {{ end }}

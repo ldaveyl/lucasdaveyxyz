@@ -4,8 +4,7 @@
     <body>
         <div class="container pagewrap">
             {{ partial "header.html" . }}
-            {{ block "main" . }}
-            {{ end }}
+            {{ block "main" . }}{{ end }}
             {{ partial "footer.html" . }}
         </div>
     </body>

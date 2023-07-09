@@ -5,5 +5,8 @@ draft: true
 date: "{{ .Date }}"
 thumbnail: ""
 ---
-
-# {{< param title >}}
+{{< wrap >}}
+<!-- {{< figure src="" >}} -->
+{{< break >}}
+{{< grid_words text="DRAFT">}}
+{{< /wrap >}}

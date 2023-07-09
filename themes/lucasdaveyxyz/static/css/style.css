@@ -66,5 +66,20 @@ h3 {
     font-size: 18px;
 }
 
+.navbar {
+    padding-top: 30px; 
+    padding-bottom: 30px;
+}
+
+.no-margin {
+    margin-bottom: 0px;
+}
+
+.footer {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
   
 
