@@ -5,7 +5,7 @@
         <div class="container pagewrap">
             {{ partial "header.html" . }}
             {{ block "main" . }}{{ end }}
-            {{ partial "footer.html" . }}
+            {{ block "footer" . }}{{ end }}
         </div>
     </body>
 </html>

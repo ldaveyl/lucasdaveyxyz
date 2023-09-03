@@ -1,6 +1,6 @@
 {{ define "main" }}
 <main aria-role="main"> 
-    {{ $p := (where .Site.RegularPages "Section" "posts").ByDate }}
+    {{ $p := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
     <div class="row">
     {{ range $p }}
         <div class="col-sm-6 col-lg-4 smooth-resize"> 

@@ -1,6 +1,5 @@
-<br>
 <div class="row">
-    <div class="col-sm-6 col-lg-4 smooth-resize">
+    <div class="col-sm-12 col-lg-12 smooth-resize">
         <figure class="figure">
             <img src="{{ .Get "src1" }}" class="figure-img img-fluid">
         </figure>
@@ -14,5 +13,10 @@
         <figure class="figure">
             <img src="{{ .Get "src3" }}" class="figure-img img-fluid">
         </figure>
+    </div>
+    <div class="col-sm-6 col-lg-4 smooth-resize">
+        <video width="100%" autoplay loop>
+            <source src="{{ .Get "src4" }}">
+        </video>
     </div>
 </div>
