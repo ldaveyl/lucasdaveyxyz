@@ -23,11 +23,12 @@ img {
     inset: 0;
     opacity: 0;
     transition: all .5s ease;
+    z-index: 0;
 }
 
 .overlay:hover {
     opacity: 1.0;
-    transition: opacity .5s ease
+    transition: opacity .5s ease;
 }
 
 .bottom-left {

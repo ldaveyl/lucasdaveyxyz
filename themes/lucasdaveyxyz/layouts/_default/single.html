@@ -6,6 +6,7 @@
 
 {{ define "footer" }}
 <div class="footer">
+    {{ if eq (.Page.Section) "posts" }}
     <span class="previous">
         {{ with .PrevInSection }}
         <a href="{{.Permalink}}"> < {{.Title}} </a>
@@ -16,5 +17,6 @@
         <a href="{{.Permalink}}"> {{.Title}} > </a>
         {{ end }}
     </span>
+    {{ end }}
 </div>
 {{ end }}

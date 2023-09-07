@@ -2,9 +2,10 @@
 <main aria-role="main"> 
     {{ $p := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
     <div class="row">
-    {{ range $p }}
+        {{ range $p }}
         <div class="col-sm-6 col-lg-4 smooth-resize"> 
-        {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
+            {{ if eq (path.Ext .Params.thumbnail) ".png" }} 
+            {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
             <figure class="figure">
                 <a href="{{ $img.RelPermalink | path.Dir }}">
                     <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="{{ $img.Width }}" height="{{ $img.Height }}">
@@ -15,8 +16,23 @@
                     </div>
                 </a>
             </figure>
+            {{ else }}
+            {{ $vid := .Resources.GetMatch .Params.thumbnail }}
+            <figure class="figure">
+                <a href="{{ $vid.RelPermalink | path.Dir }}">
+                    <video width="100%" autoplay loop mute>
+                        <source src="{{ $vid.RelPermalink }}">
+                    </video>
+                    <div class="overlay">
+                        <div class="bottom-left">
+                            {{ .Params.title }}
+                        </div>
+                    </div>
+                </a>
+            </figure>
+            {{ end }}
         </div>
-    {{ end }}
+        {{ end }}
     </div>
 </main>
 {{ end }}
