@@ -2,7 +2,7 @@
 <html lang="en">
     {{ partial "head.html" . }}
     <body>
-        <div class="container pagewrap">
+        <div class="container pagewrap overflow-hidden">
             {{ partial "header.html" . }}
             {{ block "main" . }}{{ end }}
             {{ block "footer" . }}{{ end }}

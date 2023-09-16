@@ -1,4 +1,5 @@
 body {
+    /* font-family: "Garamond", Georgia, serif; */
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2em;
 }
@@ -15,7 +16,6 @@ img {
 
 .figure {
     position: relative;
-    text-align: center;
 }
 
 .overlay {
@@ -33,10 +33,10 @@ img {
 
 .bottom-left {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 15px;
+    left: 15px;
     color: white;
-    text-shadow: 1px 1px 20px black;
+    text-shadow: 1px 1px 6px black;
     opacity: 1;
     font-size: 1em;
 }
@@ -102,11 +102,17 @@ a:hover {
 }
 
 /* img {
-    border: 1px solid black;
-} */
+    padding-left: 20px;
+    padding-right: 20px;
 
-/* video {
-    border: 1px solid black;
-} */
-  
+    margin: 0px;
+}
+
+video {
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    margin: 0px;
+}
+   */
 
