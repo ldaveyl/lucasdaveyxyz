@@ -6,7 +6,7 @@ date: "{{ .Date }}"
 thumbnail: ""
 ---
 {{< wrap >}}
-<!-- {{< figure src="" >}} -->
+<!-- {{< figure src="" class="m-0">}} -->
 {{< break >}}
 {{< grid_words text="DRAFT">}}
 {{< /wrap >}}
