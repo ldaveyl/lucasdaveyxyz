@@ -36,7 +36,7 @@ img {
     bottom: 15px;
     left: 15px;
     color: white;
-    text-shadow: 1px 1px 6px black;
+    text-shadow: 1px 1px 10px black;
     opacity: 1;
     font-size: 1em;
 }

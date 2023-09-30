@@ -1,1 +1,8 @@
 theme: "lucasdaveyxyz"
+
+deployment:
+  targets:
+    name: "s3"
+    URL: "s3://lucasdavey.xyz"
+    cloudFrontDistributionID: "ER1Z3BDJJ4OKT"
+    theme: "lucasdaveyxyz"
