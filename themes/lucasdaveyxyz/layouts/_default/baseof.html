@@ -2,10 +2,26 @@
 <html lang="en">
     {{ partial "head.html" . }}
     <body>
-        <div class="container pagewrap overflow-hidden">
+        <div class="container pagewrap">
             {{ partial "header.html" . }}
             {{ block "main" . }}{{ end }}
             {{ block "footer" . }}{{ end }}
         </div>
+        <script>
+            {
+                const nav = document.querySelector(".navbar");
+                let lastscrollY = window.scrollY;
+
+                window.addEventListener("scroll", () => {
+                    if (lastscrollY < window.scrollY) {
+                        nav.classList.add("nav--hidden");
+                    } else {
+                        nav.classList.remove("nav--hidden");
+                    }
+
+                    lastscrollY = window.scrollY;
+                });
+            }
+        </script>
     </body>
 </html>
