@@ -9,12 +9,13 @@
             <figure class="figure">
                 <a href="{{ $img.RelPermalink | path.Dir }}">
                     <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="100%" >
-                    <div class="overlay">
+                    <div class="overlay d-none d-sm-block">
                         <div class="bottom-left">
                             {{ .Params.title }}
                         </div>
                     </div>
                 </a>
+                <figcaption class="d-block d-sm-none">{{ .Params.title }}</figcaption>
             </figure>
             {{ else }}
             {{ $vid := .Resources.GetMatch .Params.thumbnail }}
@@ -23,12 +24,13 @@
                     <video width="100%" autoplay loop muted>
                         <source src="{{ $vid.RelPermalink }}">
                     </video>
-                    <div class="overlay">
+                    <div class="overlay d-none d-sm-block">
                         <div class="bottom-left">
                             {{ .Params.title }}
                         </div>
                     </div>
                 </a>
+                <figcaption class="d-block d-sm-none">{{ .Params.title }}</figcaption>
             </figure>
             {{ end }}
         </div>
