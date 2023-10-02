@@ -11,15 +11,21 @@
             {
                 const navbar = document.querySelector(".navbar");
                 const navbar_collapse = document.querySelector(".navbar-collapse");
+                const delta = 5;
+                const minimum_scroll = 70;
 
                 let lastscrollY = window.scrollY;
 
+                
                 window.addEventListener("scroll", () => {
-                    if (lastscrollY < window.scrollY) {
-                        navbar.classList.add("nav--hidden");
-                        navbar_collapse.classList.remove("show");
-                    } else {
-                        navbar.classList.remove("nav--hidden");
+
+                    if (Math.abs(lastscrollY - window.scrollY) >= delta) {
+                        if (lastscrollY < window.scrollY && window.scrollY > minimum_scroll) {
+                            navbar.classList.add("nav--hidden");
+                            navbar_collapse.classList.remove("show");
+                        } else {
+                            navbar.classList.remove("nav--hidden");
+                        }
                     }
 
                     lastscrollY = window.scrollY;

@@ -76,6 +76,7 @@ a:hover {
     position: fixed;
     padding-top: 30px;
     padding-bottom: 30px;
+    padding-left: -2px;
     z-index: 4;
     width: 95%;
     max-width: 1200px;
