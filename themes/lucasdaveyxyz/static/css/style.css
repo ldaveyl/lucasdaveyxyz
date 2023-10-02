@@ -6,7 +6,7 @@
 body {
     /* font-family: "Garamond", Georgia, serif; */
     font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 main {
@@ -74,8 +74,8 @@ a:hover {
     height: 100px;
     background-color: white;
     position: fixed;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     z-index: 4;
     width: 95%;
     max-width: 1200px;
@@ -88,9 +88,10 @@ a:hover {
 }
 
 .navbar-collapse {
-    position: relative;
+    background-color: white;
     display: block;
     text-align: left;
+    transition: all .5s ease;
 }
 
 .nav--hidden {

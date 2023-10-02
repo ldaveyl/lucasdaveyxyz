@@ -9,14 +9,17 @@
         </div>
         <script>
             {
-                const nav = document.querySelector(".navbar");
+                const navbar = document.querySelector(".navbar");
+                const navbar_collapse = document.querySelector(".navbar-collapse");
+
                 let lastscrollY = window.scrollY;
 
                 window.addEventListener("scroll", () => {
                     if (lastscrollY < window.scrollY) {
-                        nav.classList.add("nav--hidden");
+                        navbar.classList.add("nav--hidden");
+                        navbar_collapse.classList.remove("show");
                     } else {
-                        nav.classList.remove("nav--hidden");
+                        navbar.classList.remove("nav--hidden");
                     }
 
                     lastscrollY = window.scrollY;
