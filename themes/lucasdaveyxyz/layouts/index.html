@@ -3,7 +3,7 @@
     {{ $p := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
     <div class="row gx-5 gy-4">
         {{ range $p }}
-        <div class="col-sm-6 col-lg-4"> 
+        <div class="col-sm-6 col-lg-4 smooth-resize"> 
             {{ if eq (path.Ext .Params.thumbnail) ".png" }} 
             {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
             <figure class="figure">

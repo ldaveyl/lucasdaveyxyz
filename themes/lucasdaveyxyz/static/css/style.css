@@ -1,21 +1,31 @@
-.pagewrap {
-    max-width: 1200px;
-    width: 95%;
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:opsz,wght@8..144,500&display=swap');
+
+html {
+    height: 100%;
 }
 
 body {
-    /* font-family: "Garamond", Georgia, serif; */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pathway Extreme', sans-serif;
     font-size: 1em;
 }
 
 main {
     padding-top: 180px;
+    line-height: 2;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.mainwrap {
+    max-width: 1200px;
+    width: 95%;
+    min-height: 100vh;
+    /* min-height: calc(100vh - 500px - 200px); */
+    display: flex;
+    flex-direction: column;
 }
 
 .figure {
@@ -68,20 +78,18 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Navigation Bar */
+/* Header */
 
 .navbar {
     height: 100px;
     background-color: white;
     position: fixed;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    padding-left: -2px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     z-index: 4;
     width: 95%;
-    max-width: 1200px;
-    padding-right: 24px;
     transition: all .5s ease;
+    max-width: 1300px;
 }
 
 .navbar-nav {
@@ -107,17 +115,29 @@ a:hover {
 /* Footer */
 
 .footer {
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: auto;
+    height: 500px; 
+    padding-top: 180px;
+    margin-bottom: 200px;
 }
 
-.previous {
-    float: left;
+.pagination {
+    font-size: 1.2em;
 }
 
-.next {
-    float: right;
+.footerwrap {
+    max-width: 2350px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
 }
+
+.footerlink {
+    color: grey;
+    font-style: italic;
+    text-decoration: underline;
+}
+
 
 
 

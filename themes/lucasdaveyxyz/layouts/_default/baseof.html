@@ -2,11 +2,12 @@
 <html lang="en">
     {{ partial "head.html" . }}
     <body>
-        <div class="container pagewrap">
-            {{ partial "header.html" . }}
+        {{ partial "header.html" . }}
+        <div class="container mainwrap">
             {{ block "main" . }}{{ end }}
-            {{ block "footer" . }}{{ end }}
+            {{ partial "footer.html" . }}
         </div>
+        {{/*  <div class="container footerwrap"></div>  */}}
         <script>
             {
                 const navbar = document.querySelector(".navbar");
@@ -15,7 +16,6 @@
                 const minimum_scroll = 70;
 
                 let lastscrollY = window.scrollY;
-
                 
                 window.addEventListener("scroll", () => {
 

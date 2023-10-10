@@ -1,19 +1,21 @@
-<nav class="navbar navbar-expand-sm smooth-resize">
-    <span class="class navbar-brand mb-0" id="myheader">lucasdavey</span>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a class="nav-link active pe-0 ps-3" href="/"> Posts </a>
-            </li>
-            {{ $p := where site.RegularPages "Section" "!=" "posts" }}
-            {{ range sort $p "File.Path"}}
-            <li class="nav-item">
-                <a class="nav-link active pe-0 ps-3" href="{{ .RelPermalink }}"> {{ .Title }} </a>
-            </li>
-            {{ end }}
-        </ul>
-    </div>
-</nav>
+<div class="d-flex justify-content-center headerwrap">
+    <nav class="navbar navbar-expand-sm smooth-resize">
+        <span class="class navbar-brand mb-0" id="myheader">lucasdavey</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active pe-0 ps-3" href="/"> Posts </a>
+                </li>
+                {{ $p := where site.RegularPages "Section" "!=" "posts" }}
+                {{ range sort $p "File.Path"}}
+                <li class="nav-item">
+                    <a class="nav-link active pe-0 ps-3" href="{{ .RelPermalink }}"> {{ .Title }} </a>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
+    </nav>
+</div>
