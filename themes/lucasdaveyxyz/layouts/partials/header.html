@@ -6,13 +6,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                {{ $isactive := or (.IsHome) (eq .Section "posts") }}
                 <li class="nav-item">
-                    <a class="nav-link active pe-0 ps-3" href="/"> Posts </a>
+                    <a class="nav-link {{ if $isactive }} active {{ end }} else pe-0 ps-3" href="/"> Posts </a>
                 </li>
                 {{ $p := where site.RegularPages "Section" "!=" "posts" }}
                 {{ range sort $p "File.Path"}}
                 <li class="nav-item">
-                    <a class="nav-link active pe-0 ps-3" href="{{ .RelPermalink }}"> {{ .Title }} </a>
+                    <a class="nav-link {{ if eq $.Page.RelPermalink .RelPermalink }} active {{ end }} pe-0 ps-3" href="{{ .RelPermalink }}"> {{ .Title }} </a>
                 </li>
                 {{ end }}
             </ul>

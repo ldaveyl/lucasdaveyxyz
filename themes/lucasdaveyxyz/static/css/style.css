@@ -38,11 +38,12 @@ img {
     opacity: 0;
     transition: all .5s ease;
     z-index: 0;
+    background-color: black;
 }
 
 .overlay:hover {
-    opacity: 1.0;
-    transition: opacity .5s ease;
+    opacity: .75;
+    transition: opacity .2s ease;
 }
 
 .bottom-left {
@@ -74,9 +75,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+/* a:hover {
     text-decoration: underline;
-}
+} */
 
 /* Header */
 
@@ -92,8 +93,20 @@ a:hover {
     max-width: 1300px;
 }
 
+.nav-link:hover {
+    color: black;   
+}
+
+.nav-link {
+    color: black;   
+}
+
 .navbar-nav {
     font-size: 1.2em;
+}
+
+.active {
+    text-decoration: underline;
 }
 
 .navbar-collapse {
@@ -116,9 +129,9 @@ a:hover {
 
 .footer {
     margin-top: auto;
-    height: 500px; 
-    padding-top: 180px;
-    margin-bottom: 200px;
+    /* height: 500px;  */
+    /* padding-top: 180px; */
+    /* margin-bottom: 100px; */
 }
 
 .pagination {

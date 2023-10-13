@@ -8,12 +8,13 @@
             {{ end }}
         </div>
         <div class="px-5"></div>
-        <div class="text-center">
+        <div class="d-flex flex-row text-center align-items-center">
             {{ with .NextInSection }}
-                <a href="{{.Permalink}}">{{.Title}} ></a>
+                <a href="{{.Permalink}}">{{.Title}}</a>
+                <div>></div>
             {{ end }}
         </div>
     </div>
     {{ end }}
-    <div class="mt-auto text-center"><a href="/" class="footerlink">lucasdavey.xyz</a></div>
+    <div class="text-center mb-sm-1 mb-lg-5"><a href="/" class="footerlink">lucasdavey.xyz</a></div>
 </div>

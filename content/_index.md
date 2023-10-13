@@ -1,7 +1,3 @@
 ---
-title: "Lucas Davey's awesome website"
+title: "Dummy page"
 ---
-
-
-
-

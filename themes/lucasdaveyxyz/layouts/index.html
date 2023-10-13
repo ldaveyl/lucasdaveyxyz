@@ -8,7 +8,7 @@
             {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
             <figure class="figure">
                 <a href="{{ $img.RelPermalink | path.Dir }}">
-                    <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="100%" >
+                    <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="100%">
                     <div class="overlay d-none d-sm-block">
                         <div class="bottom-left">
                             {{ .Params.title }}
@@ -19,11 +19,9 @@
             </figure>
             {{ else }}
             {{ $vid := .Resources.GetMatch .Params.thumbnail }}
-            <figure class="figure ">
+            <figure class="figure">
                 <a href="{{ $vid.RelPermalink | path.Dir }}">
-                    <video width="100%" autoplay loop muted>
-                        <source src="{{ $vid.RelPermalink }}">
-                    </video>
+                    <video width="100%" autoplay loop muted><source src="{{ $vid.RelPermalink }}"></video>
                     <div class="overlay d-none d-sm-block">
                         <div class="bottom-left">
                             {{ .Params.title }}
