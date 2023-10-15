@@ -3,10 +3,11 @@
     {{ partial "head.html" . }}
     <body>
         {{ partial "header.html" . }}
-        <div class="container mainwrap">
+        <div class="container main-wrap">
             {{ block "main" . }}{{ end }}
-            {{ partial "footer.html" . }}
         </div>
+        <div class="container footer-wrap">
+            {{ partial "footer.html" . }}
         <script>
             {
                 const navbar = document.querySelector(".navbar");

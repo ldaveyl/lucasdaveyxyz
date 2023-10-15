@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-between pagination">
         <div class="d-flex flex-row text-center align-items-center">
             {{ with .PrevInSection }}
-                <div><</div>
+                <i class="bi bi-chevron-compact-left footer-arrow"></i>
                 <div><a href="{{.Permalink}}">{{.Title}}</a></div>
             {{ end }}
         </div>
@@ -12,7 +12,7 @@
         <div class="d-flex flex-row text-center align-items-center">
             {{ with .NextInSection }}
                 <a href="{{.Permalink}}">{{.Title}}</a>
-                <div>></div>
+                <i class="bi bi-chevron-compact-right footer-arrow"></i>
             {{ end }}
         </div>
     </div>

@@ -1,3 +1,3 @@
 ---
-title: "Dummy page"
+title: ""
 ---
