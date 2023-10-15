@@ -1,4 +1,5 @@
 <div class="d-flex flex-column footer">
+    <div class="footer-spacer-top"></div>
     {{ if eq (.Page.Section) "posts" }}
     <div class="d-flex justify-content-between pagination">
         <div class="d-flex flex-row text-center align-items-center">
@@ -16,5 +17,7 @@
         </div>
     </div>
     {{ end }}
-    <div class="text-center mb-sm-1 mb-lg-5"><a href="/" class="footerlink">lucasdavey.xyz</a></div>
+    <div class="footer-spacer-middle"></div>
+    <div class="text-center"><a href="/" class="footer-link">lucasdavey.xyz</a></div>
+    <div class="footer-spacer-bottom"></div>
 </div>

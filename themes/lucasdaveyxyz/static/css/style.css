@@ -6,17 +6,25 @@ html {
 
 body {
     font-family: 'Pathway Extreme', sans-serif;
-    font-size: 1em;
+    font-size: calc(100% / 2vw);
 }
 
 main {
     padding-top: 180px;
     line-height: 2;
+    display: block;
 }
 
 img {
     max-width: 100%;
     height: auto;
+    display: block;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .mainwrap {
@@ -32,32 +40,8 @@ img {
     position: relative;
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: all .5s ease;
-    z-index: 0;
-    background-color: black;
-}
-
-.overlay:hover {
-    opacity: .75;
-    transition: opacity .2s ease;
-}
-
-.bottom-left {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
-    text-shadow: 1px 1px 10px black;
-    opacity: 1;
-    font-size: 1em;
-}
-
 .smooth-resize {
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 h2 {
@@ -74,10 +58,6 @@ a {
     color: black;
     text-decoration: none;
 }
-
-/* a:hover {
-    text-decoration: underline;
-} */
 
 /* Header */
 
@@ -129,43 +109,65 @@ a {
 
 .footer {
     margin-top: auto;
-    /* height: 500px;  */
-    /* padding-top: 180px; */
-    /* margin-bottom: 100px; */
 }
 
 .pagination {
     font-size: 1.2em;
 }
 
-.footerwrap {
-    max-width: 2350px;
-    width: 95%;
-    display: flex;
-    flex-direction: column;
-}
-
-.footerlink {
+.footer-link {
     color: grey;
     font-style: italic;
     text-decoration: underline;
 }
 
-
-
-
-/* img {
-    padding-left: 20px;
-    padding-right: 20px;
-
-    margin: 0px;
+.footer-spacer-top {
+    height: 6vw;
 }
 
-video {
-    padding-left: 20px;
-    padding-right: 20px;
-    
-    margin: 0px;
+.footer-spacer-middle {
+    height: 10vw;
+    min-height: 100px;
 }
-   */
 
+.footer-spacer-bottom {
+    height: 8vw;
+    min-height: 100px;
+}
+
+/* Home page */
+
+.gallery-item {
+    position: relative;
+    display: flex;
+}
+
+.overlay-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+}
+
+.overlay-background:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: background-color .3s ease;
+}
+
+.overlay-background:hover .overlay-text {
+    opacity: 1;
+    transition: opacity .3s ease;
+}

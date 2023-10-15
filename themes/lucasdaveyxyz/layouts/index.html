@@ -1,35 +1,35 @@
 {{ define "main" }}
 <main aria-role="main">
     {{ $p := (where .Site.RegularPages "Section" "posts").ByDate.Reverse }}
-    <div class="row gx-5 gy-4">
+    <div class="row g-5">
         {{ range $p }}
         <div class="col-sm-6 col-lg-4 smooth-resize"> 
             {{ if eq (path.Ext .Params.thumbnail) ".png" }} 
             {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
-            <figure class="figure">
+            <div class="gallery-item">
                 <a href="{{ $img.RelPermalink | path.Dir }}">
-                    <img src="{{ $img.RelPermalink }}" class="figure-img img-fluid" width="100%">
-                    <div class="overlay d-none d-sm-block">
-                        <div class="bottom-left">
+                    <img src="{{ $img.RelPermalink }}">
+                    <div class="overlay-background d-none d-sm-block">
+                        <div class="overlay-text">
                             {{ .Params.title }}
                         </div>
                     </div>
                 </a>
-                <figcaption class="d-block d-sm-none">{{ .Params.title }}</figcaption>
-            </figure>
+            </div>
+            <div class="d-block d-sm-none">{{ .Params.title }}</div>
             {{ else }}
             {{ $vid := .Resources.GetMatch .Params.thumbnail }}
-            <figure class="figure">
+            <div class="gallery-item">
                 <a href="{{ $vid.RelPermalink | path.Dir }}">
-                    <video width="100%" autoplay loop muted><source src="{{ $vid.RelPermalink }}"></video>
-                    <div class="overlay d-none d-sm-block">
-                        <div class="bottom-left">
+                    <video autoplay loop muted><source src="{{ $vid.RelPermalink }}"></video>
+                    <div class="overlay-background d-none d-sm-block">
+                        <div class="overlay-text">
                             {{ .Params.title }}
                         </div>
                     </div>
                 </a>
-                <figcaption class="d-block d-sm-none">{{ .Params.title }}</figcaption>
-            </figure>
+            </div>
+            <div class="d-block d-sm-none">{{ .Params.title }}</div>
             {{ end }}
         </div>
         {{ end }}
