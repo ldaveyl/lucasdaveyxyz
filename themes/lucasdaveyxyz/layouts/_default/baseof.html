@@ -10,22 +10,32 @@
             {{ partial "footer.html" . }}
         <script>
             {
+                // Script to automatically hide the navigation bar  
                 const navbar = document.querySelector(".navbar");
                 const navbar_collapse = document.querySelector(".navbar-collapse");
-                const delta = 5;
+                const delta = 8;
                 const minimum_scroll = 70;
 
                 let lastscrollY = window.scrollY;
-                
+
                 window.addEventListener("scroll", () => {
 
-                    if (Math.abs(lastscrollY - window.scrollY) >= delta) {
-                        if (lastscrollY < window.scrollY && window.scrollY > minimum_scroll) {
-                            navbar.classList.add("nav--hidden");
-                            navbar_collapse.classList.remove("show");
-                        } else {
-                            navbar.classList.remove("nav--hidden");
+                    // Check if user scrolled at least a minimum distance from the top. This is to prevent the user from seeing what's "behind" the navigation bar. 
+                    // Next, make sure that the user scrolled quickly. If they did scroll quickly, check if scroll was up or down, and hide or reappeert he navigation bar.
+                    if (window.scrollY > minimum_scroll) {
+                    
+                        if (Math.abs(lastscrollY - window.scrollY) >= delta) {
+
+                            if (lastscrollY < window.scrollY) {
+                                navbar.classList.add("nav--hidden");
+                                navbar_collapse.classList.remove("show"); // Close hamburger menu if it is open
+                            } else {
+                                navbar.classList.remove("nav--hidden");
+                            }
                         }
+
+                    } else {
+                        navbar.classList.remove("nav--hidden");
                     }
 
                     lastscrollY = window.scrollY;
