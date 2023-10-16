@@ -13,7 +13,7 @@
                 // Script to automatically hide the navigation bar  
                 const navbar = document.querySelector(".navbar");
                 const navbar_collapse = document.querySelector(".navbar-collapse");
-                const delta = 8;
+                const delta = 5;
                 const minimum_scroll = 70;
 
                 let lastscrollY = window.scrollY;
@@ -37,7 +37,6 @@
                     } else {
                         navbar.classList.remove("nav--hidden");
                     }
-
                     lastscrollY = window.scrollY;
                 });
             }

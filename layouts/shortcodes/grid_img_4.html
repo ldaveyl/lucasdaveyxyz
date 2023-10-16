@@ -1,21 +1,17 @@
-<div class="row">
+<div class="row g-5">
     <div class="col-sm-12 col-lg-12 smooth-resize">
-        <figure class="figure">
-            <img src="{{ .Get "src1" }}" class="figure-img img-fluid">
-        </figure>
+        <img src="{{ .Get "src1" }}" class="img-fluid">
     </div>
     <div class="col-sm-6 col-lg-4 smooth-resize">
-        <video width="100%" autoplay loop muted>
+        <video width="100%" autoplay loop muted playsinline>
             <source src="{{ .Get "src2" }}">
         </video>
     </div>
     <div class="col-sm-6 col-lg-4 smooth-resize">
-        <figure class="figure">
-            <img src="{{ .Get "src3" }}" class="figure-img img-fluid">
-        </figure>
+        <img src="{{ .Get "src3" }}" class="img-fluid">
     </div>
     <div class="col-sm-6 col-lg-4 smooth-resize">
-        <video width="100%" autoplay loop muted>
+        <video width="100%" autoplay loop muted playsinline>
             <source src="{{ .Get "src4" }}">
         </video>
     </div>

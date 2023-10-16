@@ -21,7 +21,7 @@
             {{ $vid := .Resources.GetMatch .Params.thumbnail }}
             <div class="gallery-item">
                 <a href="{{ $vid.RelPermalink | path.Dir }}">
-                    <video autoplay loop muted><source src="{{ $vid.RelPermalink }}"></video>
+                    <video autoplay loop muted playsinline><source src="{{ $vid.RelPermalink }}"></video>
                     <div class="overlay-background d-none d-sm-block">
                         <div class="overlay-text">
                             {{ .Params.title }}
