@@ -1,1 +1,4 @@
 *.png
+*.jpg
+.hugo_build.lock
+public/*

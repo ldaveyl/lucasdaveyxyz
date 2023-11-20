@@ -4,9 +4,9 @@
     <div class="row g-5">
         {{ range $p }}
         <div class="col-sm-6 col-lg-4 smooth-resize"> 
-            {{ if eq (path.Ext .Params.thumbnail) ".png" }} 
+            {{ if or (eq (path.Ext .Params.thumbnail) ".png") (eq (path.Ext .Params.thumbnail) ".jpg") }} 
             {{ $img := (.Resources.GetMatch .Params.thumbnail).Resize "1000x" }}
-            <div class="gallery-item">
+            <div class="gallery-item">  
                 <a href="{{ $img.RelPermalink | path.Dir }}">
                     <img src="{{ $img.RelPermalink }}">
                     <div class="overlay-background d-none d-sm-block">

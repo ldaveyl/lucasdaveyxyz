@@ -1,5 +1,5 @@
 ---
-title: "Oldschool Anime"
+title: "Old School Anime"
 subtitle: ""
 draft: false
 date: "2023-04-28T22:56:40+02:00"
