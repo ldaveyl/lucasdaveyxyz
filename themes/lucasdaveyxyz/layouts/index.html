@@ -10,7 +10,7 @@
                 <a href="{{ $img.RelPermalink | path.Dir }}">
                     <img src="{{ $img.RelPermalink }}">
                     <div class="overlay-background d-none d-sm-block">
-                        <div class="overlay-text">
+                        <div class="overlay-text text-center">
                             {{ .Params.title }}
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 <a href="{{ $vid.RelPermalink | path.Dir }}">
                     <video autoplay loop muted playsinline><source src="{{ $vid.RelPermalink }}"></video>
                     <div class="overlay-background d-none d-sm-block">
-                        <div class="overlay-text">
+                        <div class="overlay-text text-center">
                             {{ .Params.title }}
                         </div>
                     </div>
