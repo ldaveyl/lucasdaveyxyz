@@ -1,0 +1,45 @@
+        let player = document.getElementById("player");
+        let play = document.getElementById("play");
+
+        var starttime = 2;  // start at 7 seconds
+        var endtime = 5;    // stop at 17 seconds
+
+        var video = document.getElementById('InteractiveVideo');
+
+        video.addEventListener("timeupdate", function() {
+            if (this.currentTime >= endtime) {
+                    this.pause();
+                }
+        }, false);
+
+        //suppose that video src has been already set properly
+        video.load();
+        video.play();
+        try {
+        video.currentTime = starttime;
+        } catch (ex) {
+            //handle exceptions here
+        }
+        play.addEventListener("click", function(){
+            player.play();
+        });
+    }
+
+    window.onload = function(){
+
+        var duration = 4;
+
+        var player = document.getElementById("InteractiveVideo");
+        var play = document.getElementById("InteractiveVideoElement");
+
+        play.addEventListener("click", function(){
+            player.play();
+        });
+
+        player.addEventListener("timeupdate", function() {
+            if (this.currentTime >= duration) {
+                this.pause();
+            }
+            console.log(this)
+            // this.currentTime = 0;
+        }, false);
