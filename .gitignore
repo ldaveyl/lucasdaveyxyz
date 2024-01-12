@@ -1,4 +1,6 @@
 *.png
 *.jpg
+*.mp4
 .hugo_build.lock
 public/*
+*.Identifier
