@@ -32,6 +32,7 @@ thumbnail: "thumbnail.png"
 
             // Play the video
             video.play();
+            console.log("Started video at: " + video.currentTime);
 
             // Update the flag
             isPlaying = true;
@@ -43,14 +44,18 @@ thumbnail: "thumbnail.png"
 
     // Add a timeupdate event listener to detect when the video reaches the end
     video.addEventListener('timeupdate', () => {
+
+        console.log(video.currentTime);
+
         if (!isOpen && video.currentTime >= 1.7) {
+            video.pause();
             isPlaying = false;
             isOpen = true;
+            video.currentTime = 1.7;
+        } else if (isOpen && video.currentTime >= 1.95) {
             video.pause();
-        } else if (isOpen && video.currentTime >= 2.1) {
             isPlaying = false;
             isOpen = false;
-            video.pause();
             video.currentTime = 0;
         }
     });
