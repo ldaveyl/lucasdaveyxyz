@@ -1,6 +1,8 @@
+baseURL: "https://lucasdavey.xyz/"
 theme: "lucasdaveyxyz"
 
 deployment:
+  maxDeletes: 0
   targets:
     name: "s3"
     URL: "s3://lucasdavey.xyz"
